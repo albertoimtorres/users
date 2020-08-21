@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #ece1e5;
+  color: Teal;
+  font-size: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+/* grid styles */
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  --columns: 12; /* Numero de columnas en grid */
+  --width-default: 0; /* Default width, lo hace flexible */
+  --width: var(--width-mobile, var(--width-default)); /* width de un elemento */
+
+  background-color: #ffffff;
+  border: #efe5e8 2px solid;
+  border-radius: 8px;
+  padding: 16px;
+  flex-basis: calc(var(--width) / var(--columns) * 100%);
+}
+
+@media (min-width: 576px) {
+  .column {
+    --width: var(--width-tablet, var(--width-mobile, var(--width-default)));
+  }
+}
+
+@media (min-width: 650px) {
+  .column {
+    --width: var(--width-tablet, var(--width-mobile, var(--width-default)));
+  }
+}
+
+@media (min-width: 768px) {
+  .column {
+    --width: var(
+      --width-desktop,
+      var(--width-tablet, var(--width-mobile, var(--width-default)))
+    );
+  }
+}
+
+@media (min-width: 960px) {
+  .column {
+      --width: var(--width-desktop, var(--width-tablet, var(--width-mobile, var(--width-default))));
+  }
+}
+
+  @media (min-width: 1024px) {
+  .column {
+      --width: var(--width-desktop, var(--width-tablet, var(--width-mobile, var(--width-default))));
+  }
+}

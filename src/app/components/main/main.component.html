@@ -1,0 +1,47 @@
+<app-header></app-header>
+<main class="content column">
+  <div>
+    <label>
+      <input type="text" name="search" id="search" placeholder="Búsqueda" [(ngModel)]="search" class="btn default">
+    </label>
+    <select name="page" id="page" class="btn default">
+      <option selected>8 por pagina</option>
+    </select>
+    <select name="order" id="order" class="btn default">
+      <option selected>Ordenar de A - Z</option>
+    </select>
+    <select name="all" id="all" class="btn default">
+      <option selected>Todos</option>
+    </select>
+  </div>
+  <table *ngIf="(users | json) != ({} | json)" class="">
+    <tr>
+      <th>Foto</th>
+      <th>Nombre</th>
+      <th>Apellido Paterno</th>
+      <th>Apellido Materno</th>
+      <th>Correo</th>
+      <th>Rol</th>
+      <th>Status</th>
+    </tr>
+    <tr *ngFor="let user of users.users | sortBy : 'name' | filter : search; let i = index" >
+      <td><img src="{{ user.picture }}" alt="{{ user.name }}" class="avatar" ></td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.fathersLastName }}</td>
+      <td>{{ user.mothersLastName }}</td>
+      <td>{{ user.email }}</td>
+      <td *ngIf="roles.roles && roles.roles.length > 0">
+        {{ getRole(user.roleId, roles.roles)[0].position }}
+      </td>
+      <td>
+        <!-- {{ user.active }} -->
+        <div class="switch-button">
+          <!-- Checkbox -->
+          <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
+          <!-- Botón -->
+          <label for="switch-label" class="switch-button__label"></label>
+      </div>
+      </td>
+    </tr>
+  </table>
+</main>

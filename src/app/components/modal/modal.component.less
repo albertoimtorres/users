@@ -1,0 +1,48 @@
+user-modal {
+  /* Las modales están ocultas por defecto */
+  display: none;
+
+  .user-modal {
+      /* contenedor modal fijo en toda la pantalla */
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      /* z-index debe ser mayor que .modal-background */
+      z-index: 1000;
+
+      /* permite el desplazamiento de modales altos */
+      overflow: auto;
+
+      .user-modal-body {
+          padding: 20px;
+          background: #fff;
+
+          /* el margen expone parte del fondo modal */
+          margin: 40px;
+      }
+  }
+
+  .user-modal-background {
+      /* fondo modal fijo en toda la pantalla */
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      /* negro semitransparente  */
+      background-color: #000;
+      opacity: 0.75;
+
+      /* z-index debe estar por debajo de .modal y por encima de todo lo demás  */
+      z-index: 900;
+  }
+}
+
+body.modal-open {
+  /* el desbordamiento del cuerpo está oculto para ocultar la barra de desplazamiento principal cuando la ventana modal está abierta */
+  overflow: hidden;
+}

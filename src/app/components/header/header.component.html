@@ -1,0 +1,11 @@
+<header class="header column">
+  <h4 class="text">Usuarios</h4>
+  <button class="btn prev"><img class="icon-eye" src="../../../assets/img/eye.svg">Previsualizar</button>
+  <button (click)="openModal('userModal')" class="btn add"><img class="icon-add" src="../../../assets/img/add.svg" alt="">Agregar nuevo usuario</button>
+  <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</header>
+
+<app-modal id="userModal">
+  <h1>A Custom Modal!</h1>
+  <button (click)="closeModal('userModal');">Close</button>
+</app-modal>
