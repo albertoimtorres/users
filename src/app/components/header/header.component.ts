@@ -16,11 +16,18 @@ class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   *
+   * @param id identificador del modal.
+   */
   openModal(id: string) {
-    console.log(id, '¿ID EN HEADER?')
     this.modalService.open(id);
   }
 
+  /**
+   *
+   * @param id identificador del modal.
+   */
   closeModal(id: string) {
     this.modalService.close(id);
   }

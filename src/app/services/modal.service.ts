@@ -6,24 +6,36 @@ class ModalService {
 
   private modals: any[] = [];
 
+  /**
+   * @description
+   * Agregar modal a la matriz de modales activos
+  */
   add = (modal: any) => {
-    // add modal to array of active modals
     this.modals.push(modal);
   }
 
+  /**
+   * @description
+   * Eliminar modal de la matriz de modales activos
+  */
   remove = (id: string) => {
-    // remove modal from array of active modals
     this.modals = this.modals.filter(x => x.id !== id);
   }
 
+  /**
+   * @description
+   * Modal abierta especificada por id
+  */
   open = (id: string) => {
-    // open modal specified by id
     const modal = this.modals.find(x => x.id === id);
     modal.open();
   }
 
+  /**
+   * @description
+   * Modal cerrada especificada por id
+  */
   close = (id: string) => {
-    // close modal specified by id
     const modal = this.modals.find(x => x.id === id);
     modal.close();
   }

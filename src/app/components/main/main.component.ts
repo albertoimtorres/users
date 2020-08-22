@@ -24,15 +24,24 @@ class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /* Otiene los datos del archivo json */
+    /**
+     * @description
+     * Otiene los datos del archivo json
+     * */
     this.mainService.getUsers().subscribe((data: User[]) => { this.users = data; });
     this.mainService.getRoles().subscribe((data: Role[]) => { this.roles = data; });
   }
 
-  /* Filtra los roles con respecto al id */
+  /**
+   * @description
+   * Filtra los roles con respecto al id
+   *
+   * @param id Indentificador del usuario.
+   * @param roles JSON de los roles.
+   **/
   getRole = (id, roles) => {
     if (roles.length > 0) {
-      return roles.filter(role => (role.id === id));
+      return roles.filter((role: any) => (role.id === id));
     }
   }
 }

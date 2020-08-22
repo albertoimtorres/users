@@ -22,10 +22,18 @@ class MainService {
     private appService: AppService
   ) { }
 
+  /**
+   * @description
+   * Servicio observable - Obtiene los usuarios realizando una pretición HTTO GET al servicio user.json
+  */
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.appService.url}/users.json`, this.options).pipe(map(res => res));
   }
 
+  /**
+   * @description
+   * Servicio observable - Obtiene los usuarios realizando una pretición HTTO GET al servicio roles.json
+  */
   getRoles(): Observable<Role[]> {
     return this.http.get<Role[]>(`${this.appService.url}/roles.json`, this.options).pipe(map(res => res));
   }

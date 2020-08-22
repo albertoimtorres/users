@@ -5,6 +5,13 @@ import { User } from '../models/users.model';
 
 class Pipesort implements PipeTransform {
 
+  /**
+   * @description
+   * Pipe que filtra los usuarios por los campos email o nombre.
+   *
+   * @param users Estructura JSON de los usuarios.
+   * @param key nombre de la propiedad perteneciente al objeto users para el ordenamiento del mismo.
+   */
   transform(users: any[], key: string): any[] {
     if (!users) {
       return users;
